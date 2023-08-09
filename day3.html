@@ -1,0 +1,148 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  
+    <h1>Captura las Mariposas</h1>
+    <title>Captura de Mariposas</title>
+<style>
+  html {
+  background-image: url(https://img.freepik.com/vector-gratis/fondo-mariposa-femenina-borde-rosa-ilustracion-animales-vectoriales_53876-140212.jpg?w=2000);
+}
+
+        h1 {
+      color: #6a00ff;
+    }
+    .butterfly {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+    #score {
+      font-size: 24px;
+      font-weight: bold;
+      color: #6a00ff;
+      margin-top: 20px;
+    }
+    .score-container {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 2px solid #6a00ff;
+      border-radius: 8px;
+      background-color: #ffffff;
+    }
+
+
+
+
+.container {
+
+position: relative;
+
+width: 100%;
+
+height: 100vh;
+
+}
+
+.butterfly {
+
+position: absolute;
+
+width: 100px;
+
+height: 100px;
+
+cursor: pointer;
+
+}
+
+.butterfly:hover {
+
+transform: scale(1.2);
+
+transition: transform 0.3s;
+
+}
+
+#score {
+
+position: fixed;
+
+top: 10px;
+
+right: 10px;
+
+font-size: 24px;
+
+font-weight: bold;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container"></div>
+
+<span id="score">Score: 0</span>
+
+<script>
+
+var score = 0;
+
+function generateRandomPosition(min, max) {
+
+return Math.floor(Math.random() * (max - min + 1) + min);
+
+}
+
+function createButterfly() {
+
+var butterfly = document.createElement("img");
+
+butterfly.src = "https://images.vexels.com/media/users/3/157677/isolated/preview/7a5651a757aaabf7b9dee560f8f0beb5-diseno-de-mariposa-de-jardin-amarillo.png";
+
+butterfly.className = "butterfly";
+
+butterfly.style.top = generateRandomPosition(0, window.innerHeight - 100) + "px";
+
+butterfly.style.left = generateRandomPosition(0, window.innerWidth - 100) + "px";
+
+butterfly.addEventListener("click", function () {
+
+score += 10;
+
+document.getElementById("score").textContent = "Score: " + score;
+
+butterfly.remove();
+
+});
+
+document.querySelector(".container").appendChild(butterfly);
+
+}
+
+setInterval(createButterfly, 1000);
+
+</script>
+
+</body>
+
+</html>
+<h1> Juegos Interactivos</h1>
+<br>
+<link rel="stylesheet" href="styles.css">
+<a href="plan.html">Tipos De Mariposas</a>
+<a href="day1.html">Ecosistemas</a>
+<a href="day2.html">Alimentación</a>
+<a href="day3.html">Juegos Interactivos</a>
+<a href="index.html">
+    <img src="https://images.vexels.com/media/users/3/157323/isolated/preview/c0c7d38dbe55213723ffbcea3a0dd5ac-vector-de-mariposa-rosa-detallada.png" alt="Logo" title="mariposa" width="100" height="100">
+
